@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root to : "pages#home"
   resources :heros, only: [:index, :show, :new, :create] do
-    resources :bookings, only: [:new, :create, :update]
+    resources :bookings, only: [:new, :create, :edit, :update]
   end
   resources :bookings, only: %i[destroy]
 
