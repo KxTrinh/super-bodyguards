@@ -2,6 +2,6 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-    @heros = Hero.all
+    @heroes = Hero.all
   end
 end

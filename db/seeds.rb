@@ -48,7 +48,6 @@ hero_address << "40 Avenue du Colonel Rozanoff, 91220 Brétigny-sur-Orge"
 hero_address << "9 Chemin des Mèches, 94000 Créteil"
 hero_address << "60 Rue du Général de Gaulle, 77000 Melun"
 
-
 heroes = []
 
 10.times do
@@ -60,6 +59,7 @@ heroes = []
     price: rand(50000..150000).to_s,
     user: User.all.sample
   )
+  hero.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   hero.save!
   i += 1
   heroes << hero
