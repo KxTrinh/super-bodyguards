@@ -1,2 +1,12 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Test</h1>
+
+<% @heroes.sample(3).each do |hero|%>
+<ul>
+  <li>
+    <%= cl_image_tag hero.photo.key, alt:"hero" %>
+    <h2><%=hero.name%></h2>
+    <p><%=hero.overview%></p>
+    <a href="<%= hero_path(hero) %>" class="btn btn-primary w-100 mt-3">Rent for <strong><%=hero.price%>€</strong>/hour</a>
+  </li>
+</ul>
+<%  end%>
